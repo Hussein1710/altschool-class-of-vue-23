@@ -1,7 +1,8 @@
+<script>
 import { ref, reactive } from "@vue/reactivity";
 
 export default {
-  setup() {
+    setup() {
     const colors = ["green", "red", "blue", "purple"];
     let message = ref("Pick a color...");
 
