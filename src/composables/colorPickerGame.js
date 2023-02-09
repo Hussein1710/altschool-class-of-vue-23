@@ -1,8 +1,7 @@
-<script>
-import { ref, reactive } from "@vue/reactivity";
+import  {ref } from "@vue/reactivity";
 
-export default {
-    setup() {
+
+export default function colorPicker () {
     const colors = ["green", "red", "blue", "purple"];
     let message = ref("Pick a color...");
 
@@ -13,14 +12,9 @@ export default {
       if (colors[randomNumber] === value) {
         message.value = `You win... [answer: ${colors[randomNumber]}]`;
         return;
+      
+        message.value  =  `You lose [answer: ${colors[randomNumber]}]`;
       }
-
-      message.value = `You loose [answer: ${colors[randomNumber]}]`;
-    };
-
     return { colors, message, matchColor };
-  },
-};
-</script>
-
-<style></style>
+  }
+}
